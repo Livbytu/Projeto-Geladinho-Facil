@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel | Geladinho Fácil</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#D6336C">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="img/icone-192.png">
+  <link rel="apple-touch-icon" href="img/icone-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="painel">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="app">
+    <aside class="menu-lateral" aria-label="Menu principal">
+      <div class="marca">
+        <img src="img/icone-192.png" alt="" width="36" height="36">
+        <div>
+          <strong id="nome-negocio-menu">Geladinho Fácil</strong>
+          <small>Painel da produtora</small>
+        </div>
+      </div>
+      <nav>
+        <ul id="menu-lateral-lista"></ul>
+      </nav>
+      <a class="link-cardapio" href="index.html" target="_blank">Ver cardápio do cliente</a>
+    </aside>
+
+    <div class="principal">
+      <header class="topo-painel">
+        <h1 id="titulo-tela">Início</h1>
+        <span class="selo-demo" id="selo-demo" hidden>Dados de demonstração</span>
+      </header>
+      <main id="conteudo" tabindex="-1">
+        <p class="vazio">Carregando...</p>
+      </main>
+    </div>
+  </div>
+
+  <nav class="menu-inferior" id="menu-inferior" aria-label="Menu"></nav>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/util.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/armazenamento.js"></script>
+  <script src="js/pedidos.js"></script>
+  <script src="js/fidelidade.js"></script>
+  <script src="js/producao.js"></script>
+  <script src="js/precificacao.js"></script>
+  <script src="js/financeiro.js"></script>
+  <script src="js/relatorios.js"></script>
+  <script src="js/painel.js"></script>
+</body>
+</html>

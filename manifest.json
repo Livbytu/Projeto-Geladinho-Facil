@@ -1,0 +1,15 @@
+{
+  "name": "Geladinho Fácil",
+  "short_name": "Geladinho",
+  "description": "Pedidos, fidelidade, produção, precificação e DRE de uma produtora de geladinhos.",
+  "start_url": "painel.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFF7F2",
+  "theme_color": "#D6336C",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "img/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "produtora": {
+    "nome": "Geladinho Fácil",
+    "cidade": "Itaúba - MT",
+    "slogan": "Geladinho cremoso feito em casa",
+    "whatsapp": ""
+  },
+  "fidelidade": {
+    "estrelasParaBrinde": 5,
+    "brinde": "1 geladinho grátis"
+  },
+  "precosDeExemplo": true,
+  "sabores": [
+    {
+      "id": "pudim",
+      "nome": "Pudim",
+      "descricao": "Cremoso, feito com ovos e leite condensado.",
+      "preco": 3.0,
+      "cor": "#E9B949",
+      "rendimento": 22,
+      "ingredientes": [
+        { "item": "Ovos", "qtd": 4 },
+        { "item": "Leite condensado", "qtd": 4 },
+        { "item": "Leite (medida da lata)", "qtd": 4 }
+      ]
+    },
+    {
+      "id": "morango",
+      "nome": "Morango",
+      "descricao": "Suco de morango com leite condensado e creme de leite.",
+      "preco": 3.0,
+      "cor": "#E84A6F",
+      "rendimento": 12,
+      "ingredientes": [
+        { "item": "Leite condensado", "qtd": 1 },
+        { "item": "Creme de leite", "qtd": 1 },
+        { "item": "Suco de morango (pacote)", "qtd": 3 }
+      ]
+    },
+    {
+      "id": "maracuja",
+      "nome": "Maracujá",
+      "descricao": "Suco de maracujá com leite condensado e creme de leite.",
+      "preco": 3.0,
+      "cor": "#F2A20C",
+      "rendimento": 12,
+      "ingredientes": [
+        { "item": "Leite condensado", "qtd": 1 },
+        { "item": "Creme de leite", "qtd": 1 },
+        { "item": "Suco de maracujá (pacote)", "qtd": 3 }
+      ]
+    },
+    {
+      "id": "chocolate",
+      "nome": "Chocolate",
+      "descricao": "Achocolatado com leite condensado e creme de leite.",
+      "preco": 3.0,
+      "cor": "#7B4B36",
+      "rendimento": 11,
+      "ingredientes": [
+        { "item": "Leite condensado", "qtd": 1 },
+        { "item": "Creme de leite", "qtd": 1 },
+        { "item": "Achocolatado (colher)", "qtd": 7 }
+      ]
+    }
+  ]
+}

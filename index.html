@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geladinho Fácil | Cardápio</title>
+  <meta name="description" content="Cardápio de geladinhos com pedido pelo WhatsApp.">
+  <meta name="theme-color" content="#D6336C">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="img/icone-192.png">
+  <link rel="apple-touch-icon" href="img/icone-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="vitrine">
+  <a class="pular" href="#catalogo">Pular para o cardápio</a>
+
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <div class="marca">
+        <img src="img/icone-192.png" alt="" width="40" height="40">
+        <div>
+          <strong data-nome-negocio>Geladinho Fácil</strong>
+          <small id="slogan">Geladinho cremoso feito em casa</small>
+        </div>
+      </div>
+      <a class="btn btn-secundario btn-pequeno" href="#seu-pedido">Meu pedido</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Escolha seus sabores e peça pelo WhatsApp</h1>
+      <p>Monte o pedido aqui e toque em "Pedir pelo WhatsApp". A mensagem já vai pronta para a produtora.</p>
+      <p class="aviso-exemplo" id="aviso-exemplo" hidden>Preços de exemplo, ainda não confirmados pela produtora.</p>
+    </section>
+
+    <h2 class="titulo-secao">Cardápio</h2>
+    <section id="catalogo" class="grade-sabores" aria-live="polite">
+      <p class="vazio">Carregando cardápio...</p>
+    </section>
+
+    <section class="cartao cartao-fidelidade-info">
+      <div class="estrelas grandes" aria-hidden="true"><span class="estrela cheia">★</span><span class="estrela cheia">★</span><span class="estrela cheia">★</span><span class="estrela">★</span><span class="estrela">★</span></div>
+      <div>
+        <h2>Cartão fidelidade</h2>
+        <p id="regra-fidelidade">Cada geladinho vale 1 estrela.</p>
+      </div>
+    </section>
+
+    <section class="cartao" id="seu-pedido">
+      <h2>Seu pedido</h2>
+      <div id="resumo"></div>
+      <div class="form-grade">
+        <label>Seu nome
+          <input id="nome" autocomplete="name" required placeholder="Como devemos te chamar?">
+        </label>
+        <label>Como prefere receber?
+          <select id="entrega">
+            <option>Retirada</option>
+            <option>Entrega</option>
+          </select>
+        </label>
+        <label>Para quando? (opcional)
+          <input id="data" type="date">
+        </label>
+        <label>Observação (opcional)
+          <input id="obs" placeholder="Ex.: entregar na escola">
+        </label>
+      </div>
+      <p class="erro-form" id="aviso" role="alert"></p>
+    </section>
+  </main>
+
+  <div class="barra-carrinho" id="barra">
+    <div class="container barra-conteudo">
+      <div>
+        <span id="qtd-total">0 geladinhos</span>
+        <strong id="valor-total">R$ 0,00</strong>
+      </div>
+      <button id="btn-pedir" class="btn btn-whats" disabled>Pedir pelo WhatsApp</button>
+    </div>
+  </div>
+
+  <footer class="rodape container">
+    <p><span data-nome-negocio>Geladinho Fácil</span> · Sistema desenvolvido pela turma do Técnico em Informática para Internet, Senac MT.</p>
+  </footer>
+
+  <script src="js/util.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/vitrine.js"></script>
+</body>
+</html>
+
+
+
