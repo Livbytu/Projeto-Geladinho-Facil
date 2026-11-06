@@ -6,16 +6,21 @@ Projeto Integrador Desenvolvedor front-end (UC5), Técnico em Informática para 
 
 1. Abra a pasta `geladinho-facil` no VS Code.
 2. Instale a extensão Live Server.
-3. Clique com o botão direito em `painel.html` e escolha "Open with Live Server".
+3. Clique com o botão direito em `index.html` e escolha "Open with Live Server".
 
 O sistema não abre com dois cliques no arquivo, porque o navegador bloqueia a leitura do `catalogo.json` fora de um servidor.
 
-## Páginas
+## Um arquivo HTML, três áreas
 
-| Página | Quem usa | O que faz |
+O sistema tem um único `index.html` com três áreas:
+
+| Endereço | Quem usa | O que faz |
 | --- | --- | --- |
-| `index.html` | Cliente | Cardápio, carrinho e pedido pelo WhatsApp |
-| `painel.html` | Produtora | Início, Pedidos, Fidelidade, Produção e compras, Precificação, Financeiro e DRE, Relatórios, Configurações |
+| `index.html` (sem nada no final) | Todos | Tela inicial com acesso ao cardápio, ao painel e aos 8 módulos |
+| `index.html#cardapio` | Cliente | Cardápio, carrinho e pedido pelo WhatsApp (use este link no QR Code) |
+| `index.html#painel` | Produtora | Início, Pedidos, Fidelidade, Produção e compras, Precificação, Financeiro e DRE, Relatórios, Configurações |
+
+A tela inicial leva a qualquer módulo com um toque. Cada tela do painel tem seu endereço: `#painel-pedidos`, `#painel-financeiro` e assim por diante. Quem troca de área é o arquivo `js/app.js`.
 
 ## Primeiro teste
 
@@ -32,7 +37,7 @@ No painel, toque em "Carregar dados de demonstração". O sistema cria 9 semanas
 
 1. Criar um repositório e enviar todos os arquivos desta pasta.
 2. Em Settings, Pages, escolher a branch `main` e a pasta raiz.
-3. O cardápio fica em `https://USUARIO.github.io/REPOSITORIO/` e o painel em `.../painel.html`.
+3. A tela inicial fica em `https://USUARIO.github.io/REPOSITORIO/`, o cardápio em `.../#cardapio` e o painel em `.../#painel`.
 4. O QR Code da placa aponta para o cardápio, nunca para o painel.
 
 ## Power BI
@@ -58,6 +63,7 @@ No painel, toque em "Carregar dados de demonstração". O sistema cria 9 semanas
 | `js/financeiro.js` | 4. Financeiro e Power BI | Despesas e DRE |
 | `js/relatorios.js` | 4. Financeiro e Power BI | CSV, backup, dados de demonstração |
 | `js/painel.js` | Integração | Menu, navegação, Início, Configurações |
+| `js/app.js` | Integração | Tela inicial e troca entre tela inicial, cardápio e painel |
 | `sw.js`, `manifest.json` | 1. Vitrine e WhatsApp | Instalação como aplicativo (PWA) |
 
 ## Limites conhecidos
@@ -65,3 +71,7 @@ No painel, toque em "Carregar dados de demonstração". O sistema cria 9 semanas
 - Os dados do painel ficam só no aparelho em que ele é usado. Faça backup toda semana (Relatórios).
 - Preço alterado na Precificação só chega ao cardápio depois de publicar o novo `catalogo.json`.
 - Respostas automáticas dentro do WhatsApp exigem a API oficial do WhatsApp Business e um servidor: evolução prevista para a UC11.
+
+## Versão em arquivo único
+
+A pasta `arquivo-unico` tem um `index.html` com estilo, código, imagens e catálogo embutidos. Ele abre com dois cliques, sem Live Server, e pode ser publicado sozinho no GitHub Pages ou no Netlify. Serve para demonstração e para a banca. Para programar, use os arquivos da pasta principal: o arquivo único não muda quando o código é alterado.

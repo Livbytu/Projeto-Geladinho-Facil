@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Geladinho Fácil | Cardápio</title>
-  <meta name="description" content="Cardápio de geladinhos com pedido pelo WhatsApp.">
+  <meta name="description" content="Cardápio de geladinhos com pedido pelo WhatsApp e painel de gestão da produtora.">
   <meta name="theme-color" content="#D6336C">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="img/icone-192.png">
@@ -14,85 +14,171 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="vitrine">
-  <a class="pular" href="#catalogo">Pular para o cardápio</a>
+<body class="tela-inicial">
 
-  <header class="topo">
-    <div class="container topo-conteudo">
-      <div class="marca">
-        <img src="img/icone-192.png" alt="" width="40" height="40">
+  <!-- =====================================================
+       TELA INICIAL (endereço sem # ou #inicio-sistema)
+       ===================================================== -->
+  <div id="modo-inicio">
+    <main class="container inicio-sistema">
+      <header class="inicio-cabecalho">
+        <img src="img/icone-192.png" alt="" width="64" height="64">
         <div>
-          <strong data-nome-negocio>Geladinho Fácil</strong>
-          <small id="slogan">Geladinho cremoso feito em casa</small>
+          <h1 data-nome-negocio>Geladinho Fácil</h1>
+          <p>Cardápio com pedido pelo WhatsApp e gestão completa da produção.</p>
         </div>
-      </div>
-      <a class="btn btn-secundario btn-pequeno" href="#seu-pedido">Meu pedido</a>
-    </div>
-  </header>
+      </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Escolha seus sabores e peça pelo WhatsApp</h1>
-      <p>Monte o pedido aqui e toque em "Pedir pelo WhatsApp". A mensagem já vai pronta para a produtora.</p>
-      <p class="aviso-exemplo" id="aviso-exemplo" hidden>Preços de exemplo, ainda não confirmados pela produtora.</p>
-    </section>
+      <section class="inicio-portas" aria-label="Escolha a área">
+        <a class="porta porta-cliente" href="#cardapio">
+          <small>Para o cliente</small>
+          <strong>Cardápio</strong>
+          <span>Escolher sabores e pedir pelo WhatsApp.</span>
+          <em>Abrir cardápio →</em>
+        </a>
+        <a class="porta porta-produtora" href="#painel">
+          <small>Para a produtora</small>
+          <strong>Painel de gestão</strong>
+          <span>Pedidos, clientes, produção, preços e resultado do mês.</span>
+          <em>Abrir painel →</em>
+        </a>
+      </section>
 
-    <h2 class="titulo-secao">Cardápio</h2>
-    <section id="catalogo" class="grade-sabores" aria-live="polite">
-      <p class="vazio">Carregando cardápio...</p>
-    </section>
+      <section>
+        <h2 class="titulo-secao">Módulos do painel</h2>
+        <div class="grade-modulos" id="atalhos-modulos"></div>
+      </section>
 
-    <section class="cartao cartao-fidelidade-info">
-      <div class="estrelas grandes" aria-hidden="true"><span class="estrela cheia">★</span><span class="estrela cheia">★</span><span class="estrela cheia">★</span><span class="estrela">★</span><span class="estrela">★</span></div>
-      <div>
-        <h2>Cartão fidelidade</h2>
-        <p id="regra-fidelidade">Cada geladinho vale 1 estrela.</p>
-      </div>
-    </section>
-
-    <section class="cartao" id="seu-pedido">
-      <h2>Seu pedido</h2>
-      <div id="resumo"></div>
-      <div class="form-grade">
-        <label>Seu nome
-          <input id="nome" autocomplete="name" required placeholder="Como devemos te chamar?">
-        </label>
-        <label>Como prefere receber?
-          <select id="entrega">
-            <option>Retirada</option>
-            <option>Entrega</option>
-          </select>
-        </label>
-        <label>Para quando? (opcional)
-          <input id="data" type="date">
-        </label>
-        <label>Observação (opcional)
-          <input id="obs" placeholder="Ex.: entregar na escola">
-        </label>
-      </div>
-      <p class="erro-form" id="aviso" role="alert"></p>
-    </section>
-  </main>
-
-  <div class="barra-carrinho" id="barra">
-    <div class="container barra-conteudo">
-      <div>
-        <span id="qtd-total">0 geladinhos</span>
-        <strong id="valor-total">R$ 0,00</strong>
-      </div>
-      <button id="btn-pedir" class="btn btn-whats" disabled>Pedir pelo WhatsApp</button>
-    </div>
+      <p class="suave inicio-dica">Para o QR Code e para divulgar aos clientes, use o link do cardápio: o endereço do site com <strong>#cardapio</strong> no final.</p>
+    </main>
   </div>
 
-  <footer class="rodape container">
-    <p><span data-nome-negocio>Geladinho Fácil</span> · Sistema desenvolvido pela turma do Técnico em Informática para Internet, Senac MT.</p>
-  </footer>
+  <!-- =====================================================
+       CARDÁPIO DO CLIENTE (endereço sem # ou #cardapio)
+       ===================================================== -->
+  <div id="modo-vitrine" hidden>
+    <a class="pular" href="#catalogo">Pular para o cardápio</a>
+
+    <header class="topo">
+      <div class="container topo-conteudo">
+        <div class="marca">
+          <img src="img/icone-192.png" alt="" width="40" height="40">
+          <div>
+            <strong data-nome-negocio>Geladinho Fácil</strong>
+            <small id="slogan">Geladinho cremoso feito em casa</small>
+          </div>
+        </div>
+        <a class="btn btn-secundario btn-pequeno" href="#seu-pedido">Meu pedido</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Escolha seus sabores e peça pelo WhatsApp</h1>
+        <p>Monte o pedido aqui e toque em "Pedir pelo WhatsApp". A mensagem já vai pronta para a produtora.</p>
+        <p class="aviso-exemplo" id="aviso-exemplo" hidden>Preços de exemplo, ainda não confirmados pela produtora.</p>
+      </section>
+
+      <h2 class="titulo-secao">Cardápio</h2>
+      <section id="catalogo" class="grade-sabores" aria-live="polite">
+        <p class="vazio">Carregando cardápio...</p>
+      </section>
+
+      <section class="cartao cartao-fidelidade-info">
+        <div class="estrelas grandes" aria-hidden="true"><span class="estrela cheia">★</span><span class="estrela cheia">★</span><span class="estrela cheia">★</span><span class="estrela">★</span><span class="estrela">★</span></div>
+        <div>
+          <h2>Cartão fidelidade</h2>
+          <p id="regra-fidelidade">Cada geladinho vale 1 estrela.</p>
+        </div>
+      </section>
+
+      <section class="cartao" id="seu-pedido">
+        <h2>Seu pedido</h2>
+        <div id="resumo"></div>
+        <div class="form-grade">
+          <label>Seu nome
+            <input id="nome" autocomplete="name" required placeholder="Como devemos te chamar?">
+          </label>
+          <label>Como prefere receber?
+            <select id="entrega">
+              <option>Retirada</option>
+              <option>Entrega</option>
+            </select>
+          </label>
+          <label>Para quando? (opcional)
+            <input id="data" type="date">
+          </label>
+          <label>Observação (opcional)
+            <input id="obs" placeholder="Ex.: entregar na escola">
+          </label>
+        </div>
+        <p class="erro-form" id="aviso" role="alert"></p>
+      </section>
+    </main>
+
+    <div class="barra-carrinho" id="barra">
+      <div class="container barra-conteudo">
+        <div>
+          <span id="qtd-total">0 geladinhos</span>
+          <strong id="valor-total">R$ 0,00</strong>
+        </div>
+        <button id="btn-pedir" class="btn btn-whats" disabled>Pedir pelo WhatsApp</button>
+      </div>
+    </div>
+
+    <footer class="rodape container">
+      <p><span data-nome-negocio>Geladinho Fácil</span> · Sistema desenvolvido pela turma do Técnico em Informática para Internet, Senac MT.</p>
+      <p><a href="#painel">Área da produtora</a> · <a href="#inicio-sistema">Tela inicial</a></p>
+    </footer>
+  </div>
+
+  <!-- =====================================================
+       PAINEL DA PRODUTORA (#painel e #painel-<módulo>)
+       ===================================================== -->
+  <div id="modo-painel" hidden>
+    <div class="app">
+      <aside class="menu-lateral" aria-label="Menu principal">
+        <div class="marca">
+          <img src="img/icone-192.png" alt="" width="36" height="36">
+          <div>
+            <strong id="nome-negocio-menu">Geladinho Fácil</strong>
+            <small>Painel da produtora</small>
+          </div>
+        </div>
+        <nav>
+          <ul id="menu-lateral-lista"></ul>
+        </nav>
+        <a class="link-cardapio" href="#inicio-sistema">Tela inicial</a>
+        <a class="link-cardapio" href="#cardapio">Ver cardápio do cliente</a>
+      </aside>
+
+      <div class="principal">
+        <header class="topo-painel">
+          <h1 id="titulo-tela">Início</h1>
+          <span class="selo-demo" id="selo-demo" hidden>Dados de demonstração</span>
+        </header>
+        <main id="conteudo" tabindex="-1">
+          <p class="vazio">Carregando...</p>
+        </main>
+      </div>
+    </div>
+
+    <nav class="menu-inferior" id="menu-inferior" aria-label="Menu"></nav>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="js/util.js"></script>
   <script src="js/api.js"></script>
+  <script src="js/armazenamento.js"></script>
+  <script src="js/pedidos.js"></script>
+  <script src="js/fidelidade.js"></script>
+  <script src="js/producao.js"></script>
+  <script src="js/precificacao.js"></script>
+  <script src="js/financeiro.js"></script>
+  <script src="js/relatorios.js"></script>
+  <script src="js/painel.js"></script>
   <script src="js/vitrine.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
-
-
-
